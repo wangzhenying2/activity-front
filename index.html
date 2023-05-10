@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="referrer" content="unsafe-url">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>淘逛逛商城</title>
+    <script>
+      // 地址带参数eruda=true可以开启调试模式
+      ;(function () {
+          var src = '//cdn.jsdelivr.net/npm/eruda';
+          if (!/eruda=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
+          document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+          document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+      })();
+    </script>
+    <script>
+      // 兼容iOS12.2以下globalThis不兼容导致的白屏问题
+      !function (t) {
+      function e() {
+      var e = this || self;
+      e.globalThis = e, delete t.prototype._T_
+      }
+      "object" != typeof globalThis && (this ? e() : (t.defineProperty(t.prototype, "_T_", {
+        configurable: !0,
+        get: e
+      }), _T_))
+      }(Object);
+      // 禁止页面外放时，iOS浏览器无法通过meta属性限制其缩放的解决方案
+      window.onload = function() {
+        document.addEventListener('touchstart', function(event) {
+          if (event.touches.length > 1) {
+            event.preventDefault()
+          }
+        })
+        document.addEventListener('gesturestart', function(event) {
+          event.preventDefault()
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

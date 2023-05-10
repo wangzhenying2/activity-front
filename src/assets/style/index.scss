@@ -1,0 +1,171 @@
+:root {
+    --van-red: #EE302D;
+    --van-text-color: #222222;
+    --van-primary-color: var(--van-red);
+    --van-dialog-border-radius: 6px;
+    --van-swipe-indicator-inactive-opacity: 1;
+    --van-swipe-indicator-inactive-background-color: #D8D8D8;
+    --van-action-sheet-header-height: 10vw;
+}
+// 页面默认灰底
+body {
+    font-size: 13px;
+    min-height: 100vh;
+    background: #f8f8f8;
+    scrollbar-width:none;
+    &::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+    }
+}
+a {
+    color: #4286FF;
+}
+
+// 自定义快捷样式
+.page-white {
+    min-height: 100vh;
+    background: #fff;
+}
+.bg-white {
+    background-color: #fff;
+}
+.c-primary {
+    color: var(--van-primary-color);
+}
+.c-grey {
+    color: #999;
+}
+.c-red {
+    color: var(--van-primary-color);
+}
+.tl {
+    text-align: left;
+}
+.tc {
+    text-align: center;
+}
+.tr {
+    text-align: right;
+}
+.db {
+    display: block;
+}
+.flex {
+    display: flex;
+    &.start {
+        align-items: flex-start;
+    }
+    &.center {
+        align-items: center;
+    }
+    &.middle {
+        justify-content: center;
+    }
+    &.end {
+        align-items: flex-end;
+    }
+}
+
+@each $i in 0, 5, 10, 15, 20, 25, 30 {
+    .m#{$i} {
+        margin: #{$i}px !important;
+    }
+    .mt#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    .mb#{$i} {
+        margin-bottom: #{$i}px !important;
+    }
+    .ml#{$i} {
+        margin-left: #{$i}px !important;
+    }
+    .mr#{$i} {
+        margin-right: #{$i}px !important;
+    }
+    .p#{$i} {
+        padding: #{$i}px !important;
+    }
+    .pt#{$i} {
+        padding-top: #{$i}px !important;
+    }
+    .pr#{$i} {
+        padding-right: #{$i}px !important;
+    }
+    .pb#{$i} {
+        padding-bottom: #{$i}px !important;
+    }
+    .pl#{$i} {
+        padding-left: #{$i}px !important;
+    }
+}
+@for $i from 1 to 5 {
+    .flex-#{$i} {
+        flex: $i;
+    }
+}
+@for $i from 12 to 20 {
+    .fs#{$i} {
+        font-size: #{$i}px;
+    }
+}
+
+.bar-placeholder {
+    padding-top: 50px;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.page-footer {
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    color: #CCCCCC;
+}
+.page-wrapper {
+    .page-footer {
+        padding-top: 12px;
+    }
+}
+.bottom-service-button {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    .van-icon {
+        color: #EE302D;
+        font-size: 15px;
+        margin-right: 4px;
+    }
+}
+.product-num-tip {
+    font-size: 10px;
+    color: #ccc;
+}
+
+// 覆盖van原样式
+.van-button.fix-width {
+    width: 88px;
+    text-align: center;
+}
+.van-button.fix-width-3 {
+    width: 74px;
+    text-align: center;
+}
+.van-dialog__content--isolated {
+    min-height: 60px;
+}
+.van-button--disabled.van-button--plain {
+    color: #ccc!important;
+    border-color: #ccc!important;
+}
+.van-action-sheet__close {
+    left: 0;
+    right: auto;
+}
